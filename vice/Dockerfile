@@ -1,5 +1,3 @@
-
-   
 FROM harbor.cyverse.org/vice/jupyter/datascience:latest
 
 USER root
@@ -16,9 +14,8 @@ USER jovyan
 #    && pip install biopython==1.72
 
 # Install OpenJDK & PySpark
-#RUN conda install openjdk=8.0 pyspark=2.4 biopython=1.72 numba=0.49 jupyterlab=3.2 \
-#    ipywidgets=7.6 py3Dmol=0.8 py2neo monotonic black -y
-#RUN conda install openjdk=8.0 pyspark=2.4 biopython=1.72 py3Dmol=0.8 py2neo monotonic  -y
+RUN conda install openjdk=8.0 pyspark=2.4 biopython=1.72 numba=0.49 jupyterlab=3.2 \
+    ipywidgets=7.6 py3Dmol=0.8 py2neo monotonic -y
 
 # Install mmtfPySpark
 RUN pip install gql git+https://github.com/sbl-sdsc/mmtf-pyspark.git
